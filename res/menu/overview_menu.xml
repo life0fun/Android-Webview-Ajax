@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_sync"
+        android:icon="@android:drawable/ic_popup_sync"
+        android:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_togglemark"
+        android:title="@string/bookmark"
+        android:icon="@android:drawable/ic_menu_search"
+        android:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_share"
+        android:title="@string/share"
+        android:icon="@android:drawable/ic_popup_sync"
+        android:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_help"
+        android:title="@string/help"
+        android:icon="@android:drawable/ic_menu_search"
+        android:showAsAction="never" />
+</menu>

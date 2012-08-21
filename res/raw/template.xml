@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+   <meta   http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   <script src="file:///android_asset/jquery.js" type="text/javascript"></script>
+   <script src="file:///android_asset/jquery.innerfade.js" type="text/javascript" ></script>
+   <script src="file:///android_asset/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+   <script src="file:///android_asset/jquery-ui-1.8.1.custom.min.js" type="text/javascript" charset="utf-8"></script>
+   <script src="file:///android_asset/uieffect.js" type="text/javascript" charset="utf-8"></script>
+  
+   <link rel="stylesheet" href="file:///android_asset/jquery-ui-1.8.1.custom.css"/>
+   
+   <script type="text/javascript">
+     $(document).ready(function(){
+	   console.log("document ready !!");
+	   console.error("document error");
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	   $("#Ajax").live("click tap", function() {
+	      console.log("#Ajax clicked");
+		  $.ajax({ type: "GET", 
+			       url: "https://api.foursquare.com/v2/venues/search",
+				   data: ({ ll: "42.288,-88.00", client_id: "TI05WPK23W2P3YZGGU1YCJMAGJSSU1PAJQH4ZE3TDSN4221V", client_secret:"0FDPA4TBAM3TY1VGWI5KRKDIBI4XGPHKQBOWWE3AIWVJGW3H"}),
+				   dataType: "text", 
+				   success: postDone
+		  });
+	   });
+
+	   function postDone(msg) {
+			console.log(msg);
+			//$("#location").innerHTML = "<p>" + msg + "</p>";
+			//$.data("#location", "result done");
+			$.data(document.body, "result done");
+	   }
+	   function onload() {
+			console.log("loading....");
+	   }
+   </script>
+ </head>
+
+ <!-- <body onload="initialize_map(); initialize(); init_canvas()"> -->
+ <body onload="onload();">
+   
+   <div data-role="page">
+   		<div data-role="header">
+	   		<h4>Template page title</h4>
+	   	</div>
+	   	<div data-role="content">
+			<a href="#" data-role="button" id="Ajax">Ajax</a>
+	   	</div>
+		<div data-role="content" id="location">
+			<p> location data </p>
+		</div>
+   </div>
+   		
+    <select name="effects" id="effectTypes">
+		<option value="blind">Blind</option>
+		<option value="bounce">Bounce</option>
+		<option value="clip">Clip</option>
+		<option value="drop">Drop</option>
+		<option value="explode">Explode</option>
+		<option value="fade">Fade</option>
+		<option value="fold">Fold</option>
+		<option value="highlight">Highlight</option>
+		<option value="puff">Puff</option>
+		<option value="pulsate">Pulsate</option>
+		<option value="scale">Scale</option>
+		<option value="shake">Shake</option>
+		<option value="size">Size</option>
+		<option value="slide">Slide</option>
+		<option value="transfer">Transfer</option>
+    </select>
+
+   <canvas id="d" width="300" height="225"></canvas>
+   <canvas id="e" width="300" height="225"></canvas>
+	
+ </body>
+ </html>

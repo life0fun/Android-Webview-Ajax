@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+   <meta   http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   <script src="file:///android_asset/jquery.js" type="text/javascript"></script>
+   <script src="file:///android_asset/jquery.innerfade.js" type="text/javascript" ></script>
+   <script src="file:///android_asset/people.js" type="text/javascript"></script>
+   <script src="file:///android_asset/game.js" type="text/javascript" charset="utf-8"></script>
+   <script src="file:///android_asset/jquery-ui-1.8.1.custom.min.js" type="text/javascript" charset="utf-8"></script>
+   <script src="file:///android_asset/uieffect.js" type="text/javascript" charset="utf-8"></script>
+  
+ 
+   <link rel="stylesheet" href="file:///android_asset/game.css"/>
+   <link rel="stylesheet" href="file:///android_asset/jquery-ui-1.8.1.custom.css"/>
+    
+   <style type="text/css">
+    a.test { font-weight: bold; }
+    div.mycolor { color : #0000ff; }
+    div.ex { width:220px; padding:10px; border:5px solid gray; margin:0px;}
+    [title]{color:red;}
+   </style>
+   
+   <style type="text/css">
+		.toggler { width: 500px; height: 200px; position: relative;}
+		#button { padding: .5em 1em; text-decoration: none; }
+		#effect { width: 240px; height: 135px; padding: 0.4em; position: relative; }
+		#effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+		.ui-effects-transfer { border: 2px dotted gray; } 
+	</style>
+	
+   <script type="text/javascript">
+     $(document).ready(function(){
+       $("a").addClass("test");
+       $("#title").addClass("mycolor");
+      
+       $("#android").click(function(event){
+         //alert("As you can see, the link no longer took you to jquery.com");
+         event.preventDefault();
+         $(this).hide("slow");
+       });
+       
+       $('#news').innerfade({
+				animationtype: 'slide',
+				speed: 750,
+				timeout: 2000,
+				type: 'random',
+				containerheight: '1em'
+			});
+     });
+   </script>
+   
+   <script type="text/javascript">
+     /* <![CDATA[ */
+     	$(function(){
+			var score = 0, life = 100;
+			
+			$("#game").delegate(".user", "hit", function(){
+				var data = $(this).data();
+				data.hits++;
+				
+				if ( data.hits >= data.maxhits ) {
+					$(this).stop().remove();
+				} else {
+					$(this).addClass("hit");
+				}
+				
+				score += 100;
+				$("#score").text( score );
+			});
+			
+			$("#game").delegate(".user", "escape", function(){
+				var data = $(this).data();
+				
+				life -= data.maxhits * 3;
+				
+				if ( life < 0 ) {
+					life = 0;
+				}
+				
+				$("#life").text( life );
+				
+				if ( life <= 0 ) {
+					$("#stats").append(" <b class='kill'>You were killed by: " + data.user + "</b>");
+					$("#game").trigger("stop");
+				}
+				
+				$(this).remove();
+			});
+			
+			$("#game").bind("start", function(){
+				score = 0;
+				life = 100;
+				$("#score").text( score );
+				$("#life").text( life );
+				
+				$("input").hide();
+				
+				$("b.kill").fadeOut(1000, function(){
+					$(this).remove();
+				});
+			});
+			
+			$("#game").bind("stop", function(){
+				$("input").show();
+			});
+
+			$("input").click(function(){
+				$("#game").trigger("start");
+			});
+		});
+	/* ]]> */
+	</script>
+	
+	<script type="text/javascript">
+	function initialize_map()
+	{
+    	var myOptions = {
+          zoom: 4,
+          mapTypeControl: true,
+          mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+          navigationControl: true,
+          navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+          mapTypeId: google.maps.MapTypeId.ROADMAP      
+        }   
+	    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+	}
+
+	function initialize()
+	{
+    	if(geo_position_js.init())
+	    {
+    	    document.getElementById('current').innerHTML="Receiving...";
+        	geo_position_js.getCurrentPosition(show_position,function(){document.getElementById('current').innerHTML="Couldn't get location"},{enableHighAccuracy:true});
+    	}
+	    else
+    	{
+        	document.getElementById('current').innerHTML="Functionality not available";
+    	}
+	}
+
+	function show_position(p)
+	{
+    	document.getElementById('current').innerHTML="latitude="+p.coords.latitude.toFixed(2)+" longitude="+p.coords.longitude.toFixed(2);
+	    var pos=new google.maps.LatLng(p.coords.latitude,p.coords.longitude);
+    	map.setCenter(pos);
+	    map.setZoom(14);
+
+    	var infowindow = new google.maps.InfoWindow({
+        	content: "<strong>yes</strong>"
+	    });
+
+    	var marker = new google.maps.Marker({
+        	position: pos,
+        	map: map,
+	        title:"You are here"
+    	});
+
+	    google.maps.event.addListener(marker, 'click', function() {
+    	  infowindow.open(map,marker);
+    	});
+    
+	}
+	</script>
+ </head>
+
+ <!-- <body onload="initialize_map(); initialize(); init_canvas()"> -->
+ <body>
+ 
+   <script type="text/javascript"> console.error("loading.......");</script>
+   <a id="android" href="http://developer.android.com">Android</a>
+   
+   <p title="any_for_matching_title_selector"> Formating fade effect</p>
+   
+   <ul id="news">
+	<li>
+		<a href="#n1">1 Ruth</a>
+	</li>
+	<li>
+		<a href="#n2">2 Tablet</a>
+	</li>
+	<li>
+		<a href="#n3">3 Morrison</a>
+	</li>
+	<li>
+		<a href="#n4">4 Shadow</a>
+	</li>
+  </ul>
+
+
+  <div class="demo">
+    <div class="toggler">
+	  <div id="effect" class="ui-widget-content ui-corner-all">
+		<h3 class="ui-widget-header ui-corner-all">Effect</h3>
+		<p> WebView based local Javascript UI effect with JQuery ... presented by Emerging Applicatin Group </p>  
+	  </div>
+    </div>
+
+    <select name="effects" id="effectTypes">
+		<option value="blind">Blind</option>
+		<option value="bounce">Bounce</option>
+		<option value="clip">Clip</option>
+		<option value="drop">Drop</option>
+		<option value="explode">Explode</option>
+		<option value="fade">Fade</option>
+		<option value="fold">Fold</option>
+		<option value="highlight">Highlight</option>
+		<option value="puff">Puff</option>
+		<option value="pulsate">Pulsate</option>
+		<option value="scale">Scale</option>
+		<option value="shake">Shake</option>
+		<option value="size">Size</option>
+		<option value="slide">Slide</option>
+		<option value="transfer">Transfer</option>
+    </select>
+
+    <a href="#" id="button" class="ui-state-default ui-corner-all">Run Effect</a>
+
+  </div><!-- End demo -->
+
+   <canvas id="d" width="300" height="225"></canvas>
+   <canvas id="e" width="300" height="225"></canvas>
+
+   <div class="ex" id="title">Show Position In Map</div>
+   <div class="ex" id="current">Initializing...</div>
+   <div id="map_canvas" title="applyred" style="width:320px; height:350px">map_canvas</div>
+   
+    <p id="stats"><input type="button" value="Start"/> Score: <strong id="score">0</strong> Life: <strong id="life">0</strong></p>
+    <div id="game"></div>
+	
+ </body>
+ </html>

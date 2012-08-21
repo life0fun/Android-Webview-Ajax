@@ -1,0 +1,21 @@
+/Users/e51141/workspace/AjaxWebApp/gen/com/mot/ajaxwebapp/R.java \
+ : /Users/e51141/workspace/AjaxWebApp/res/drawable-hdpi/icon.png \
+/Users/e51141/workspace/AjaxWebApp/res/drawable-hdpi/machine.png \
+/Users/e51141/workspace/AjaxWebApp/res/drawable-ldpi/icon.png \
+/Users/e51141/workspace/AjaxWebApp/res/drawable-mdpi/icon.png \
+/Users/e51141/workspace/AjaxWebApp/res/layout/episode_meta.xml \
+/Users/e51141/workspace/AjaxWebApp/res/layout/episodedetails.xml \
+/Users/e51141/workspace/AjaxWebApp/res/layout/episodedetails_fragment.xml \
+/Users/e51141/workspace/AjaxWebApp/res/layout/loc_list.xml \
+/Users/e51141/workspace/AjaxWebApp/res/layout/main.xml \
+/Users/e51141/workspace/AjaxWebApp/res/layout/main_fragment.xml \
+/Users/e51141/workspace/AjaxWebApp/res/layout/row_loc.xml \
+/Users/e51141/workspace/AjaxWebApp/res/layout/webview.xml \
+/Users/e51141/workspace/AjaxWebApp/res/menu/episodedetails_menu.xml \
+/Users/e51141/workspace/AjaxWebApp/res/menu/episodelist_menu.xml \
+/Users/e51141/workspace/AjaxWebApp/res/menu/overview_menu.xml \
+/Users/e51141/workspace/AjaxWebApp/res/raw/content.xml \
+/Users/e51141/workspace/AjaxWebApp/res/raw/sameorigin.xml \
+/Users/e51141/workspace/AjaxWebApp/res/raw/template.xml \
+/Users/e51141/workspace/AjaxWebApp/res/values/strings.xml \
+/Users/e51141/workspace/AjaxWebApp/AndroidManifest.xml \

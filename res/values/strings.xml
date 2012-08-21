@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, LocalWebView!</string>
+    <string name="loadurl">Load URL</string>
+    <string name="app_name">AjaxWebApp</string>
+	<string name="loading">Loading...</string>
+	<string-array name="share_items">
+		<item>Check In (GetGlue)</item>
+		<item>Check In (trakt)</item>
+		<item>Mark seen (trakt)</item>
+		<item>Rate (trakt)</item>
+		<item>Other services</item>
+	</string-array>
+	<string name="search">Search</string>
+	<string name="refresh">Refresh</string>
+	<string name="bookmark">Bookmark</string>
+	<string name="share">Share</string>
+	<string name="help">Help</string>
+	<string name="current_loc">Locations</string>
+	<string name="nearby_loc">Nearby Locations</string>
+	<string name="empty_message">No Nearby Locations</string>
+
+</resources>

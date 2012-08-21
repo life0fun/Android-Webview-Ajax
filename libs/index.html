@@ -1,0 +1,128 @@
+<HTML>
+<HEAD>
+	<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<TITLE>Circle Bobble by Brent Silby</TITLE>
+<SCRIPT language="javascript" src="./browsercheck.js"></SCRIPT>
+<script src="prg.js" type="text/javascript"></script>
+
+</HEAD>
+
+<BODY onload="setFrameRate(&#39;init()&#39;,20)" bgcolor="#000000" style="overflow-x: hidden; overflow-y: hidden; ">
+<IMG src="./loading.gif" id="loadingImg1" style="position: absolute; z-index: 1; visibility: visible; top: 250px; left: -1000px; ">
+<IMG src="./c1.gif" galleryimg="no" id="temp0" style="position: absolute; z-index:1; visibility: visible; top:0;left:-2000">
+<IMG src="./h1.gif" galleryimg="no" id="temp1" style="position: absolute; z-index:1; visibility: visible; top:0;left:-2000">
+<IMG src="./b1.gif" galleryimg="no" id="temp2" style="position: absolute; z-index:1; visibility: visible; top:0;left:-2000">
+<IMG src="./m1.gif" galleryimg="no" id="temp3" style="position: absolute; z-index:1; visibility: visible; top:0;left:-2000">
+<IMG src="./r1.gif" galleryimg="no" id="temp4" style="position: absolute; z-index:1; visibility: visible; top:0;left:-2000">
+<IMG src="./g1.gif" galleryimg="no" id="temp5" style="position: absolute; z-index:1; visibility: visible; top:0;left:-2000">
+<IMG src="./st1.gif" galleryimg="no" id="temp6" style="position: absolute; z-index:1; visibility: visible; top:0;left:-2000">
+<IMG src="./t.gif" galleryimg="no" id="temp7" style="position: absolute; z-index:1; visibility: visible; top:0;left:-2000">
+<IMG src="./c.gif" galleryimg="no" id="temp8" style="position: absolute; z-index:1; visibility: visible; top:0;left:-2000">
+<IMG src="./r1.gif" id="ready" style="position: absolute; z-index:11; visibility: visible; top:200;left:-1000">
+<IMG src="./g1.gif" galleryimg="no" id="gameover" style="position: absolute; z-index:11; visibility: visible; top:-1250;left:-1000">
+<IMG src="./st1.gif" galleryimg="no" id="stagepassed" style="position: absolute; z-index:11; visibility: visible; top:-1250;left:-1000">
+<IMG src="./c.gif" galleryimg="no" id="congrats" style="position: absolute; z-index:10; visibility: visible; top:0;left:-1000">
+
+<STYLE type="text/css">
+</STYLE>
+
+<DIV style="overflow-x: hidden; overflow-y: hidden; z-index: 0; position: absolute; left: 273px; width: 200px; top: -100px; visibility: hidden; " id="STdiv0">
+
+<TABLE border="0"><TBODY><TR><TD bgcolor="#444444" nowrap=""><FONT color="#ffffff" face="sans-serif" size="3">Testing System Speed</FONT></TD></TR></TBODY></TABLE>
+</DIV>
+
+<DIV style="position: absolute; width: 0px; overflow-x: visible; overflow-y: visible; z-index: 1000; top: 0px; left: 0px; " id="InU_1">
+<DIV style="overflow-x: hidden; overflow-y: hidden; z-index: 2; position: absolute; left: 0px; top: 0px; width: 800px; height: 30px; clip: rect(0px 800px 30px 0px); " id="In_2">
+<DIV style="overflow-x: hidden; overflow-y: hidden; z-index: 3; position: absolute; left: 0px; top: 0px; width: 90px; " id="inlabel_3"><FONT face="Arial" color="#FFFF00" size="4&quot;">SCORE</FONT>
+</DIV><DIV style="overflow-x: hidden; overflow-y: hidden; z-index: 4; position: absolute; left: 375px; top: 0px; width: 90px; " id="inlabel_4"><FONT face="Arial" color="#ffff00" size="4&quot;">LIVES</FONT>
+</DIV><DIV style="overflow-x: hidden; overflow-y: hidden; z-index: 5; position: absolute; left: 590px; top: 0px; width: 90px; " id="inlabel_5"><FONT face="Arial" color="#00ffff" size="4&quot;">BOBBLES</FONT>
+</DIV><DIV style="overflow-x: hidden; overflow-y: hidden; z-index: 6; position: absolute; left: 70px; top: 0px; width: 90px; " id="inlabel_6"><FONT face="Arial" color="#FFFFFF" size="4&quot;">0</FONT>
+</DIV><DIV style="overflow-x: hidden; overflow-y: hidden; z-index: 7; position: absolute; left: 435px; top: 0px; width: 90px; " id="inlabel_7"><FONT face="Arial" color="#FFFFFF" size="4&quot;">3</FONT>
+</DIV><DIV style="overflow-x: hidden; overflow-y: hidden; z-index: 8; position: absolute; left: 680px; top: 0px; width: 90px; " id="inlabel_8"><FONT face="Arial" color="#FFFFFF" size="4&quot;">0</FONT>
+</DIV></DIV></DIV>
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 3; " src="./h1.gif" width="294" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 7; clip: rect(0px 195px 39px 156px); top: 500px; left: 454px; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 7; clip: rect(0px 117px 39px 78px); top: 471px; left: 502px; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 7; clip: rect(0px 78px 39px 39px); top: 433px; left: 525px; " src="./c1.gif" width="234" height="234">
+ni
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 7; clip: rect(0px 78px 39px 39px); top: 392px; left: 526px; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 7; clip: rect(0px 117px 39px 78px); top: 354px; left: 504px; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 7; clip: rect(0px 39px 39px 0px); top: 327px; left: 614px; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 7; clip: rect(0px 195px 39px 156px); top: 314px; left: 497px; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 7; clip: rect(0px 195px 39px 156px); top: 319px; left: 539px; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 7; clip: rect(0px 195px 39px 156px); top: 341px; left: 574px; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 7; clip: rect(0px 39px 39px 0px); top: 375px; left: 754px; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 7; clip: rect(0px 156px 39px 117px); top: 416px; left: 645px; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 7; clip: rect(0px 78px 39px 39px); top: 456px; left: 714px; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 7; clip: rect(0px 195px 39px 156px); top: 489px; left: 572px; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 7; clip: rect(0px 156px 39px 117px); top: 510px; left: 574px; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 7; clip: rect(0px 39px 39px 0px); top: 513px; left: 650px; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 8; " src="./b1.gif" width="12" height="40">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 8; " src="./b1.gif" width="12" height="40">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 8; " src="./b1.gif" width="12" height="40">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 8; " src="./b1.gif" width="12" height="40">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 8; " src="./b1.gif" width="12" height="40">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 8; " src="./b1.gif" width="12" height="40">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 8; " src="./b1.gif" width="12" height="40">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 8; " src="./b1.gif" width="12" height="40">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 8; " src="./b1.gif" width="12" height="40">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 8; " src="./b1.gif" width="12" height="40">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 7; " src="./c1.gif" width="234" height="234">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 5; " src="./m1.gif" width="39" height="39">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 5; " src="./m1.gif" width="39" height="39">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 5; " src="./m1.gif" width="39" height="39">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 5; " src="./m1.gif" width="39" height="39">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 5; " src="./m1.gif" width="39" height="39">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 5; " src="./m1.gif" width="39" height="39">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 5; " src="./m1.gif" width="39" height="39">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 5; " src="./m1.gif" width="39" height="39">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 5; " src="./m1.gif" width="39" height="39">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 5; " src="./m1.gif" width="39" height="39">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; clip: rect(0px 0px 0px 0px); z-index: 5; " src="./m1.gif" width="39" height="39">
+<IMG style="position: absolute; overflow-x: hidden; overflow-y: hidden; z-index: 2; clip: rect(0px 795px 525px 0px); top: 0px; left: 0px; " src="./t.gif" width="795" height="525">
+
+<IFRAME id="buffer" name="buffer" style="width: 1px; height: 1px; position: absolute; overflow-x: hidden; overflow-y: hidden; visibility: hidden; left: 0px; top: -20px; " src="" width="1" height="1"></IFRAME>
+
+<DIV style="overflow-x: hidden; overflow-y: hidden; z-index: 83; position: absolute; left: 0px; top: 0px; width: 200px; " id="Adiv83">
+</DIV>
+
+
+</BODY>
+
+</HTML>
